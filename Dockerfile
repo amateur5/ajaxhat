@@ -1,11 +1,17 @@
-# Postavljanje radnog direktorijuma
+# Koristi PHP 8.2 image
+FROM php:8.2-cli
+
+# Postavljanje radnog direktorijuma unutar container-a
 WORKDIR /var/www/html
 
-# Kopiraj sve fajlove aplikacije u radni direktorijum
+# Kopiraj sve fajlove iz trenutnog direktorijuma u container
 COPY . /var/www/html/
 
-# Daj prava fajlovima
+# Dodeli odgovarajuće permisije
 RUN chown -R www-data:www-data /var/www/html
 
-# Pokreni aplikaciju (ako je PHP, pokreni PHP server, ili ako koristiš Node.js, odgovarajući server)
-CMD ["php", "-S", "0.0.0.0:80"]
+# Ako aplikacija koristi neki PHP eksterni alat, možeš ih instalirati ovde, npr.:
+# RUN docker-php-ext-install mysqli
+
+# Pokreni PHP server na portu 8000
+CMD ["php", "-S", "0.0.0.0:8000"]
