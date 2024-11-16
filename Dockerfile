@@ -1,11 +1,17 @@
-# Koristi PHP sa built-in serverom
+# Koristi PHP 8.2 image
 FROM php:8.2-cli
 
-# Kopiraj sve fajlove aplikacije u radni folder unutar Docker-a
-COPY . /var/www/html
+# Postavljanje radnog direktorijuma unutar container-a
+WORKDIR /var/www/html
 
-# Ekspozicija porta 8000 (default za PHP built-in server)
-EXPOSE 8000
+# Kopiraj sve fajlove iz trenutnog direktorijuma u container
+COPY . /var/www/html/
 
-# Pokreni PHP built-in server
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "/var/www/html"]
+# Dodeli odgovarajuće permisije
+RUN chown -R www-data:www-data /var/www/html
+
+# Ako aplikacija koristi neki PHP eksterni alat, možeš ih instalirati ovde, npr.:
+# RUN docker-php-ext-install mysqli
+
+# Pokreni PHP server na portu 8000
+CMD ["php", "-S", "0.0.0.0:8000"]
