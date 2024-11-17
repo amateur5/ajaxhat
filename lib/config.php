@@ -22,16 +22,15 @@ $config = array();
 // Database connection values:
 $config['dbConnection'] = array();
 // Database hostname:
-$config['dbConnection']['host'] = 'localhost';
+$config['dbConnection']['host'] = 'dpg-csslfm52ng1s73amggag-a.frankfurt-postgres.render.com'; // Host sa Render-a
 // Database username:
-$config['dbConnection']['user'] = 'root';
+$config['dbConnection']['user'] = 'radio_ajaxchat_user'; // Korisničko ime
 // Database password:
-$config['dbConnection']['pass'] = '';
+$config['dbConnection']['pass'] = 'Bhge2SJq6dABQeHdVu8ETtBwlVQznSDA'; // Lozinka
 // Database name:
-$config['dbConnection']['name'] = 'chat';
+$config['dbConnection']['name'] = 'radio_ajaxchat'; // Naziv baze
 // Database type:
-$config['dbConnection']['type'] = null;
-// Database link:
+$config['dbConnection']['type'] = 'pgsql'; // Postgres je baza, koristi 'pgsql'
 $config['dbConnection']['link'] = null;
 
 // Database table names:
@@ -52,7 +51,7 @@ $config['langNames'] = array(
 	'ar'=>'عربي', 'bg'=>'Български', 'ca'=>'Català', 'cy'=>'Cymraeg', 'cz'=>'Česky', 'da'=>'Dansk', 'de'=>'Deutsch', 'el'=>'Ελληνικα', 'en'=>'English',
 	'es'=>'Español', 'et'=>'Eesti', 'fa'=>'فارسی', 'fi'=>'Suomi', 'fr'=>'Français', 'gl'=>'Galego', 'he'=>'עברית', 'hr' => 'Hrvatski', 'hu' => 'Magyar', 'in'=>'Bahasa Indonesia', 'it'=>'Italiano',
 	'ja'=>'日本語','ka'=>'ქართული','kr'=>'한 글','mk'=>'Македонски', 'nl'=>'Nederlands', 'nl-be'=>'Nederlands (België)', 'no'=>'Norsk', 'pl'=> 'Polski', 'pt-br'=>'Português (Brasil)', 'pt-pt'=>'Português (Portugal)', 
-	'ro'=>'România', 'ru'=>'Русский', 'sk'=> 'Slovenčina', 'sl'=>'Slovensko', 'sr'=>'Srpski', 'sv'=> 'Svenska', 'th'=>'&#x0e20;&#x0e32;&#x0e29;&#x0e32;&#x0e44;&#x0e17;&#x0e22;', 
+	'ro'=>'România', 'ru'=>'Русский', 'sk'=> 'Slovenčina', 'sl'=>'Slovensko', 'sr'=>'Srpski', 'sv'=>'Svenska', 'th'=>'&#x0e20;&#x0e32;&#x0e29;&#x0e32;&#x0e44;&#x0e17;&#x0e22;', 
 	'tr'=>'Türkçe', 'uk'=>'Українська', 'zh'=>'中文 (简体)', 'zh-tw'=>'中文 (繁體)'
 );
 
