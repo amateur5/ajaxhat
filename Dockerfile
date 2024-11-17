@@ -1,7 +1,7 @@
 # Koristi PHP 8.2 image
 FROM php:8.2-cli
 
-# Instaliraj potrebne PHP ekstenzije
+# Instaliraj potrebne PHP ekstenzije za MySQL
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Postavljanje radnog direktorijuma unutar container-a
