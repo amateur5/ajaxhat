@@ -8,17 +8,19 @@
  * @link https://blueimp.net/ajax/
  */
 
-// Suppress errors:
-ini_set('display_errors', 0);
+// Uključi prikazivanje grešaka za debagovanje
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-// Path to the chat directory:
+// Putanja do direktorijuma chat-a:
 define('AJAX_CHAT_PATH', dirname($_SERVER['SCRIPT_FILENAME']).'/');
 
-// Include custom libraries and initialization code:
+// Uključi prilagođene biblioteke i inicijalizaciju:
 require(AJAX_CHAT_PATH.'lib/custom.php');
 
-// Include Class libraries:
+// Uključi biblioteke klasa:
 require(AJAX_CHAT_PATH.'lib/classes.php');
 
-// Initialize the chat:
+// Inicijalizuj chat:
 $ajaxChat = new CustomAJAXChat();
+?>
