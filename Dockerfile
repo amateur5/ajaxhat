@@ -1,17 +1,21 @@
-# Koristi PHP 8.2 image
 FROM php:8.2-cli
 
-# Postavljanje radnog direktorijuma unutar container-a
 WORKDIR /var/www/html
 
-# Kopiraj sve fajlove iz trenutnog direktorijuma u container
+# Instaliraj potrebne PHP ekstenzije
+RUN apt-get update && apt-get install -y \
+    libzip-dev libonig-dev libcurl4-openssl-dev \
+    && docker-php-ext-install zip mbstring curl pdo pdo_mysql
+
+# Instaliraj Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Kopiraj fajlove
 COPY . /var/www/html/
 
-# Dodeli odgovarajuće permisije
+# Dodeli permisije
 RUN chown -R www-data:www-data /var/www/html
 
-# Pokreni PHP server na portu 8000
-CMD ["php", "-S", "0.0.0.0:8000"]
-
-# Expose port 8000
+# Expose port i pokreni server
 EXPOSE 8000
+CMD ["php", "-S", "0.0.0.0:8000"]
