@@ -21,17 +21,17 @@ $config = array();
 
 // Database connection values:
 $config['dbConnection'] = array();
-// Database hostname:
-$config['dbConnection']['host'] = 'localhost';
-// Database username:
-$config['dbConnection']['user'] = 'root';
-// Database password:
-$config['dbConnection']['pass'] = '';
-// Database name:
-$config['dbConnection']['name'] = 'chat';
-// Database type:
-$config['dbConnection']['type'] = null;
-// Database link:
+// Database hostname (tvoj Render host):
+$config['dbConnection']['host'] = 'dpg-ct15qb1u0jms73ccn2l0-a.frankfurt-postgres.render.com';  
+// Database username (tvoje korisničko ime za PostgreSQL):
+$config['dbConnection']['user'] = 'ajaxchat_user';  
+// Database password (tvoja lozinka):
+$config['dbConnection']['pass'] = 'ubZQSIeStDA6b1iIWgI5BJQE6HVFyFw6';  
+// Database name (ime tvoje baze):
+$config['dbConnection']['name'] = 'ajaxchat';  
+// Database type (za PostgreSQL postavi "pgsql"):
+$config['dbConnection']['type'] = 'pgsql';  
+// Database link (ostavi null, koristi kasnije za konekciju):
 $config['dbConnection']['link'] = null;
 
 // Database table names:
@@ -40,6 +40,7 @@ $config['dbTableNames']['online']		= 'ajax_chat_online';
 $config['dbTableNames']['messages']		= 'ajax_chat_messages';
 $config['dbTableNames']['bans']			= 'ajax_chat_bans';
 $config['dbTableNames']['invitations']	= 'ajax_chat_invitations';
+
 
 // Available languages:
 $config['langAvailable'] = array(
